@@ -1,0 +1,22 @@
+# Read Hello:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/hello
+
+# Add a new pledge
+curl -i -H "Content-Type: application/json" -X POST -d '{
+        "name": "Doug",
+        "statement": "I vote to change the world!"
+    }' localhost:8080/pledges
+
+# List all pledges
+curl -i -H "Content-Type: application/json" \
+    -X GET localhost:8080/pledges
+
+# Get Pledge
+curl -i -H "Content-Type: application/json" \
+    -X GET localhost:8080/pledges/2
+
+# Change one pledge
+curl -i -H "Content-Type: application/json" -X POST -d '{
+        "name": "Reggie",
+        "statement": "Voting for new opportunities"
+    }' localhost:8080/pledges/2
